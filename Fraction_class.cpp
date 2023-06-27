@@ -14,9 +14,29 @@ public:
         this->denominator = denominator;
     }
 
-    void print()
+    void print() const
     {
         cout << this->numerator << " / " << denominator << '\n'; // Here this keyword isn't necessary because yha function ke argument me koi dusra numerator ni h to wo implicitally object ka hi num/den access krega
+    }
+
+    int getNumerator() const
+    {
+        return numerator;
+    }
+
+    int getDenominator() const
+    {
+        return denominator;
+    }
+
+    void setNumerator(int n)
+    {
+        numerator = n;
+    }
+
+    void setDenominator(int d)
+    {
+        denominator = d;
     }
 
     void simplify()
@@ -61,11 +81,15 @@ int main()
 {
     Fraction f1(10, 2), f2(15, 4);
 
-    f1.add(f2);
-    f1.print();
-    f2.print();
+    // f1.add(f2);
+    // f1.print();
+    // f2.print();
 
-    f1.multiply(f2);
-    f1.print();
-    f2.print();
+    // f1.multiply(f2);
+    // f1.print();
+    // f2.print();
+
+    Fraction const f3(5, 10);
+    f3.print();
+    // f3.setDenominator(2); can't use as it is constant object and even if we use const function it will not get changed
 }
